@@ -26,13 +26,43 @@ trait SayHello
   }
 }
 
-trait HasName {
+trait HasName
+{
   public string $name;
 }
 
-class Person
+trait CanRun
 {
-  use SayGoodBye;
-  use SayHello;
-  use HasName;
+  public abstract function run(string $name): void;
+}
+
+class ParentExtenteds
+{
+  public function goodBye(?string $name): void
+  {
+    echo "GOOD BYE $name" . PHP_EOL;
+  }
+
+  public function sayHello(?string $name): void
+  {
+    echo "HELLO $name" . PHP_EOL;
+  }
+}
+
+trait All
+{
+  use SayGoodBye, HasName, SayHello, CanRun {
+  // SayGoodBye as private;
+  }
+}
+
+class Person extends ParentExtenteds
+{
+  use All;
+  public function run(string $name): void
+  {
+    echo "CAN RUN $name" . PHP_EOL;
+  }
+
+
 }
