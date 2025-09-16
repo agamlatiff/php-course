@@ -7,4 +7,4 @@ $student->id = '1';
 $student->name = 'Agam';
 $student->value = 'FULLTSTACK WEB DEVELOPER';
 
-$student(1,2,3,4,5);
+// $student(1,2,3,4,5);
