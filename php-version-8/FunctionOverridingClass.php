@@ -7,7 +7,7 @@ class ParentClass {
 }
 
 class ChildClass extends ParentClass {
-  public function method(int $name) {
+  public function method(string $name) {
     
   }
 }
