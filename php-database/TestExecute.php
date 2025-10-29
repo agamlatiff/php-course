@@ -5,8 +5,7 @@ require_once __DIR__ . "/GetConnection.php";
 $connection = getConnection();
 
 $sql = <<<SQL
-    INSERT INTO customers(id, name, email)
-    VALUES ("4", "CHRIS REDFIELD", "chrisredfieldd@gmail.com");
+   SELECT * FROM customers;
 SQL;
 
 $connection->exec($sql);
